@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct WeatherData: Decodable {
+struct WeatherData: Codable {
     let name: String
     let weather: [Weather]
     let main: Main
 }
 
-struct Main: Decodable {
-    let temp: Float
+struct Main: Codable {
+    let temp: Double
     let feels_like: Float
     let temp_min: Float
     let temp_max: Float
@@ -25,9 +25,7 @@ struct Main: Decodable {
     let grnd_level: Int
 }
 
-struct Weather: Decodable {
+struct Weather: Codable {
     let id: Int
-    let main: String
     let description: String
-    let icon: String
 }
